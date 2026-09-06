@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pan y Miel — Panadería artesanal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FBF6EE;
+            color: #3D2B1F;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Fraunces', serif;
+        }
+
+        /* Encabezado */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            border-bottom: 1px solid #E8DDC8;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #6B4226;
+        }
+
+        .nav a {
+            margin-left: 28px;
+            text-decoration: none;
+            color: #3D2B1F;
+            font-size: 15px;
+        }
+
+        .nav a:hover {
+            color: #C98A2C;
+        }
+
+        /* Sección de inicio */
+        .hero {
+            padding: 80px 48px;
+            max-width: 640px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #6B4226;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #5A4636;
+        }
+
+        /* Catálogo */
+        .catalogo {
+            padding: 0 48px 80px;
+        }
+
+        .catalogo h2 {
+            font-size: 28px;
+            margin-bottom: 32px;
+            color: #6B4226;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .tarjeta-producto {
+            background: #ffffff;
+            border: 1px solid #E8DDC8;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        .tarjeta-producto h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #3D2B1F;
+        }
+
+        .tarjeta-producto p {
+            font-size: 14px;
+            color: #7A6A57;
+            margin-bottom: 16px;
+        }
+
+        .precio {
+            font-weight: 500;
+            color: #C98A2C;
+            font-size: 16px;
+        }
+
+        /* Pie de página */
+        .footer {
+            padding: 24px 48px;
+            border-top: 1px solid #E8DDC8;
+            text-align: center;
+            font-size: 13px;
+            color: #7A6A57;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aquí React va a "montar" toda la aplicación -->
+    <div id="root"></div>
+
+    <!-- React y ReactDOM, cargados directo desde CDN (sin necesidad de instalar Node/npm) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <!-- Babel permite escribir JSX (la sintaxis de React) directamente en el navegador -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+    <!-- Nuestro código de la aplicación, escrito en JSX -->
+    <script type="text/babel" src="app.js"></script>
+
+</body>
+</html>
