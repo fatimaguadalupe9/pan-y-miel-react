@@ -86,6 +86,8 @@
         }
 
         .tarjeta-producto {
+            display: flex;
+            flex-direction: column;
             background: #ffffff;
             border: 1px solid #E8DDC8;
             border-radius: 10px;
@@ -137,6 +139,183 @@
 
         .contacto li {
             margin-bottom: 8px;
+        }
+
+        /* Botones (Sprint 3) */
+        .boton {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            background: #6B4226;
+            color: #ffffff;
+            border: 0;
+            border-radius: 8px;
+            padding: 10px 18px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: #C98A2C;
+        }
+
+        .boton-agregar {
+            display: block;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .tarjeta-producto .precio {
+            margin-bottom: 14px;
+        }
+
+        .boton-secundario {
+            background: transparent;
+            color: #6B4226;
+            border: 1px solid #6B4226;
+        }
+
+        .boton-secundario:hover {
+            background: #E8DDC8;
+        }
+
+        .nav-carrito {
+            font-weight: 500;
+            color: #6B4226;
+        }
+
+        /* Carrito (PB-06) */
+        .carrito, .pedido {
+            padding: 0 48px 80px;
+            max-width: 760px;
+        }
+
+        .carrito h2, .pedido h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #6B4226;
+        }
+
+        .vacio {
+            color: #7A6A57;
+        }
+
+        .lista-carrito {
+            list-style: none;
+            border-top: 1px solid #E8DDC8;
+        }
+
+        .lista-carrito li {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid #E8DDC8;
+        }
+
+        .cantidad {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .boton-mini {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #CDBBA0;
+            background: #ffffff;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #3D2B1F;
+        }
+
+        .boton-mini:hover {
+            background: #E8DDC8;
+        }
+
+        .subtotal {
+            min-width: 80px;
+            text-align: right;
+            color: #C98A2C;
+            font-weight: 500;
+        }
+
+        .enlace-quitar {
+            background: none;
+            border: 0;
+            color: #7A6A57;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .total {
+            margin: 16px 0;
+            font-size: 18px;
+        }
+
+        /* Formulario de pedido (PB-07) */
+        .pedido form {
+            display: grid;
+            gap: 6px;
+        }
+
+        .pedido label {
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .pedido input[type="text"],
+        .pedido input[type="tel"],
+        .pedido textarea {
+            padding: 10px;
+            border: 1px solid #CDBBA0;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            background: #ffffff;
+        }
+
+        .pedido fieldset {
+            border: 1px solid #E8DDC8;
+            border-radius: 8px;
+            padding: 8px 14px 14px;
+            margin-top: 12px;
+        }
+
+        .pedido .opcion {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 400;
+        }
+
+        .error {
+            color: #A5341F;
+            font-size: 14px;
+        }
+
+        .resumen {
+            margin-top: 12px;
+            color: #5A4636;
+        }
+
+        .pedido .boton {
+            justify-self: start;
+            margin-top: 12px;
+        }
+
+        .confirmacion {
+            background: #ffffff;
+            border: 1px solid #E8DDC8;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        .confirmacion ul {
+            margin: 12px 0 12px 20px;
         }
 
         /* Pie de página */

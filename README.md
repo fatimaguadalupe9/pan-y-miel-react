@@ -24,14 +24,34 @@ Como `paginaprincipal.html` carga el archivo `app.js`, el navegador puede dejar 
 | PB-02 | Página de inicio (Home) | `Home` | `app.js` |
 | PB-03 | Catálogo de productos | `Catalogo` | `app.js` |
 
-El catálogo muestra 4 productos con nombre, descripción y precio. Las fotografías de los productos están pendientes.
+### Sprint 2 (terminado)
 
-### Siguientes sprint
+| ID | Elemento del backlog | Componente | Archivo |
+|---|---|---|---|
+| PB-04 | Fotografías de los productos en el catálogo | `Catalogo` y carpeta `img/` | `app.js` |
+| PB-05 | Sección de contacto | `Contacto` | `app.js` |
 
-Los demás elementos del Product Backlog quedan para los siguientes sprint, según la calendarización del proyecto.
+### Sprint 3 (terminado)
+
+| ID | Elemento del backlog | Componente | Archivo |
+|---|---|---|---|
+| PB-06 | Carrito de compras | `Carrito` y botón "Agregar al carrito" en `Catalogo` | `app.js` |
+| PB-07 | Formulario de pedido | `Pedido` | `app.js` |
+
+- El carrito vive en el estado de `App` (`useState`) y se guarda en el navegador (`localStorage`), así que no se pierde al recargar.
+- El menú muestra cuántas piezas hay en el carrito.
+- El formulario valida nombre, teléfono de 10 dígitos y, si es a domicilio, la dirección. Al enviarlo muestra una confirmación con folio y total (aún no hay servidor).
+- El envío a domicilio tiene un costo fijo de ejemplo de $30 MXN.
+
+### Pendiente
+
+| ID | Elemento del backlog | Sprint |
+|---|---|---|
+| PB-08 | Diseño adaptable a celular | 4 |
+| PB-09 | Pruebas finales y publicación | 4 |
 
 ## Archivos
 
 - `paginaprincipal.html`: estructura de la página y estilos.
-- `app.js`: componentes de React (`Header`, `Home`, `Catalogo`, `Footer`, `App`).
-- `README.md`: esta descripción.
+- `app.js`: componentes de React (`Header`, `Home`, `Catalogo`, `Carrito`, `Pedido`, `Contacto`, `Footer` y `App`).
+- `img/`: fotografías de los productos.
