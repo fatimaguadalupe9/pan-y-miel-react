@@ -43,15 +43,15 @@ Como `paginaprincipal.html` carga el archivo `app.js`, el navegador puede dejar 
 - El formulario valida nombre, teléfono de 10 dígitos y, si es a domicilio, la dirección. Al enviarlo muestra una confirmación con folio y total (aún no hay servidor).
 - El envío a domicilio tiene un costo fijo de ejemplo de $30 MXN.
 
-### Pendiente
+### Sprint 4 (terminado)
 
-| ID | Elemento del backlog | Sprint |
-|---|---|---|
-| PB-08 | Diseño adaptable a celular | 4 |
-| PB-09 | Pruebas finales y publicación | 4 |
+| ID | Elemento del backlog | Qué se hizo | Archivo |
+|---|---|---|---|
+| PB-08 | Diseño adaptable a celular | Se agregó la etiqueta `viewport` y estilos `@media (max-width: 700px)`: menú en dos filas, productos en una columna, carrito reorganizado y botones y campos más grandes para tocar con el dedo | `paginaprincipal.html` |
+| PB-09 | Pruebas finales y publicación | Pruebas en computadora y en ancho de celular. Ajuste: al enviar un pedido la pantalla baja a la confirmación. Sitio publicado en GitHub Pages | `app.js`, `README.md` |
 
 ## Archivos
 
-- `paginaprincipal.html`: estructura de la página y estilos.
+- `paginaprincipal.html`: estructura de la página y estilos (incluye los estilos para celular).
 - `app.js`: componentes de React (`Header`, `Home`, `Catalogo`, `Carrito`, `Pedido`, `Contacto`, `Footer` y `App`).
 - `img/`: fotografías de los productos.

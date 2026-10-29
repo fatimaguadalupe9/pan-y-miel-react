@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Sprint 4 (PB-08): sin esta línea el celular muestra la página como si fuera de escritorio -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pan y Miel — Panadería artesanal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -325,6 +327,81 @@
             text-align: center;
             font-size: 13px;
             color: #7A6A57;
+        }
+
+        /* Diseño adaptable a celular (Sprint 4, PB-08) */
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 16px 20px;
+            }
+
+            .nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px 20px;
+            }
+
+            .nav a {
+                margin-left: 0;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .catalogo, .carrito, .pedido, .contacto {
+                padding: 0 20px 48px;
+            }
+
+            .grid-productos {
+                grid-template-columns: 1fr;
+            }
+
+            /* Carrito: el nombre arriba; cantidad, subtotal y "Quitar" en la fila de abajo */
+            .lista-carrito li {
+                grid-template-columns: 1fr auto auto;
+                gap: 8px 12px;
+            }
+
+            .linea-nombre {
+                grid-column: 1 / -1;
+                font-weight: 500;
+            }
+
+            .subtotal {
+                min-width: 0;
+                text-align: left;
+            }
+
+            /* Botones y campos más fáciles de tocar con el dedo */
+            .boton, .boton-mini {
+                min-height: 44px;
+            }
+
+            .boton-mini {
+                min-width: 44px;
+            }
+
+            .pedido input[type="text"],
+            .pedido input[type="tel"],
+            .pedido textarea {
+                font-size: 16px;
+            }
+
+            .pedido .boton {
+                justify-self: stretch;
+            }
+
+            .footer {
+                padding: 24px 20px;
+            }
         }
     </style>
 </head>

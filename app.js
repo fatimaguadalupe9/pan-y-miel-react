@@ -1,5 +1,5 @@
 // ---------------------------------------------------------
-// Pan y Miel — Sitio web (Sprint 3)
+// Pan y Miel — Sitio web (Sprint 4)
 // Componentes de React correspondientes al Sprint Backlog:
 //   PB-01 Diseño del logotipo e identidad visual  -> <Header />
 //   PB-02 Página de inicio (Home)                 -> <Home />
@@ -8,6 +8,8 @@
 //   PB-05 Sección de contacto                     -> <Contacto />
 //   PB-06 Carrito de compras                      -> <Carrito /> y botón en <Catalogo />   (Sprint 3)
 //   PB-07 Formulario de pedido                    -> <Pedido />                            (Sprint 3)
+//   PB-08 Diseño adaptable a celular              -> estilos @media en paginaprincipal.html (Sprint 4)
+//   PB-09 Pruebas finales y publicación           -> ajustes de las pruebas y GitHub Pages  (Sprint 4)
 // ---------------------------------------------------------
 
 // Hooks de React que usamos en este sprint (React se carga desde el CDN, por eso se toman de React)
@@ -115,6 +117,15 @@ function Pedido({ items, onPedidoEnviado }) {
     const [datos, setDatos] = useState({ nombre: "", telefono: "", entrega: "recoger", direccion: "", notas: "" });
     const [errores, setErrores] = useState({});
     const [confirmacion, setConfirmacion] = useState(null);
+
+    // Ajuste del Sprint 4 (PB-09): al confirmar el pedido se lleva la pantalla a la confirmación,
+    // porque en el celular el formulario es largo y el mensaje quedaba fuera de la vista
+    useEffect(() => {
+        if (confirmacion) {
+            const seccion = document.getElementById("pedido");
+            if (seccion && seccion.scrollIntoView) seccion.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, [confirmacion]);
 
     const lineas = items.map((it) => ({ ...productos.find((p) => p.id === it.id), cantidad: it.cantidad }));
     const subtotal = lineas.reduce((suma, l) => suma + l.precio * l.cantidad, 0);
@@ -244,7 +255,7 @@ function Contacto() {
 function Footer() {
     return (
         <footer className="footer">
-            <p>Pan y Miel · Panadería artesanal · Sprint 3 desarrollado en React</p>
+            <p>Pan y Miel · Panadería artesanal · Sprint 4 desarrollado en React</p>
         </footer>
     );
 }
