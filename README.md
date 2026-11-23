@@ -50,8 +50,24 @@ Como `paginaprincipal.html` carga el archivo `app.js`, el navegador puede dejar 
 | PB-08 | Diseño adaptable a celular | Se agregó la etiqueta `viewport` y estilos `@media (max-width: 700px)`: menú en dos filas, productos en una columna, carrito reorganizado y botones y campos más grandes para tocar con el dedo | `paginaprincipal.html` |
 | PB-09 | Pruebas finales y publicación | Pruebas en computadora y en ancho de celular. Ajuste: al enviar un pedido la pantalla baja a la confirmación. Sitio publicado en GitHub Pages | `app.js`, `README.md` |
 
+### Versión final (modificaciones de la revisión del proyecto)
+
+Cambios hechos a partir de la evaluación de usabilidad y de la reunión de revisión del equipo:
+
+| Modificación | Qué se hizo | Archivo |
+|---|---|---|
+| Menú fijo | El menú se queda arriba al bajar por la página; las secciones no quedan tapadas | `paginaprincipal.html` |
+| Logotipo con enlace | Al hacer clic en "Pan y Miel" se regresa al inicio | `app.js` |
+| Enlaces más claros | Los enlaces del menú se subrayan al pasar el cursor o al enfocarlos con teclado | `paginaprincipal.html` |
+| Pie de página con enlaces | Enlaces a Inicio, Catálogo, Carrito, Quiénes somos y Contacto | `app.js` |
+| Sección "Quiénes somos" | Nueva sección y nuevo enlace en el menú | `app.js` |
+| Información del pedido | Aviso sobre el costo de envío y sobre cómo se confirma el pedido | `app.js` |
+| Mejor contraste | Los textos secundarios usan un café más oscuro y el pie de página es más grande | `paginaprincipal.html` |
+| Imágenes más ligeras | Fotografías reducidas de tamaño y carga diferida (`loading="lazy"`) | `img/`, `app.js` |
+| Aviso técnico | Mensaje si el navegador no tiene JavaScript y nota de que se requiere internet | `paginaprincipal.html`, `app.js` |
+
 ## Archivos
 
 - `paginaprincipal.html`: estructura de la página y estilos (incluye los estilos para celular).
-- `app.js`: componentes de React (`Header`, `Home`, `Catalogo`, `Carrito`, `Pedido`, `Contacto`, `Footer` y `App`).
+- `app.js`: componentes de React (`Header`, `Home`, `Catalogo`, `Carrito`, `Pedido`, `Nosotros`, `Contacto`, `Footer` y `App`).
 - `img/`: fotografías de los productos.

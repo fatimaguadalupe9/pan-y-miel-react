@@ -1,5 +1,5 @@
 // ---------------------------------------------------------
-// Pan y Miel — Sitio web (Sprint 4)
+// Pan y Miel — Sitio web (versión final)
 // Componentes de React correspondientes al Sprint Backlog:
 //   PB-01 Diseño del logotipo e identidad visual  -> <Header />
 //   PB-02 Página de inicio (Home)                 -> <Home />
@@ -10,6 +10,8 @@
 //   PB-07 Formulario de pedido                    -> <Pedido />                            (Sprint 3)
 //   PB-08 Diseño adaptable a celular              -> estilos @media en paginaprincipal.html (Sprint 4)
 //   PB-09 Pruebas finales y publicación           -> ajustes de las pruebas y GitHub Pages  (Sprint 4)
+//   Versión final: menú fijo, logotipo con enlace, sección <Nosotros />, enlaces en el pie de página,
+//                  información del pedido y mejor contraste (modificaciones de la revisión del proyecto)
 // ---------------------------------------------------------
 
 // Hooks de React que usamos en este sprint (React se carga desde el CDN, por eso se toman de React)
@@ -30,10 +32,11 @@ const COSTO_ENVIO = 30;
 function Header({ cantidadCarrito }) {
     return (
         <header className="header">
-            <div className="logo">Pan y Miel</div>
+            <div className="logo"><a href="#inicio">Pan y Miel</a></div>
             <nav className="nav">
                 <a href="#inicio">Inicio</a>
                 <a href="#catalogo">Catálogo</a>
+                <a href="#nosotros">Quiénes somos</a>
                 <a href="#contacto">Contacto</a>
                 <a href="#carrito" className="nav-carrito">Carrito ({cantidadCarrito})</a>
             </nav>
@@ -63,7 +66,7 @@ function Catalogo({ onAgregar }) {
             <div className="grid-productos">
                 {productos.map((producto) => (
                     <div className="tarjeta-producto" key={producto.id}>
-                        <img className="foto-producto" src={producto.imagen} alt={producto.nombre} />
+                        <img className="foto-producto" src={producto.imagen} alt={producto.nombre} loading="lazy" />
                         <h3>{producto.nombre}</h3>
                         <p>{producto.descripcion}</p>
                         <span className="precio">${producto.precio} MXN</span>
@@ -191,6 +194,10 @@ function Pedido({ items, onPedidoEnviado }) {
     return (
         <section id="pedido" className="pedido">
             <h2>Haz tu pedido</h2>
+            <p className="info-pedido">
+                Puedes recoger tu pedido en la panadería sin costo o pedirlo a domicilio por ${COSTO_ENVIO} MXN.
+                Por ahora el pedido se confirma en esta pantalla; el envío en línea se agregará en una fase futura.
+            </p>
             <form onSubmit={enviar} noValidate>
                 <label htmlFor="nombre">Nombre</label>
                 <input id="nombre" type="text" value={datos.nombre} onChange={(e) => cambiar("nombre", e.target.value)} />
@@ -252,10 +259,32 @@ function Contacto() {
     );
 }
 
+// Versión final: sección "Quiénes somos" (el enlace del menú lleva aquí)
+function Nosotros() {
+    return (
+        <section id="nosotros" className="nosotros">
+            <h2>Quiénes somos</h2>
+            <p>
+                Pan y Miel es una panadería artesanal. Elaboramos cada pieza con ingredientes
+                locales y procesos tradicionales, y desde 2024 llevamos el sabor de la miel de
+                abeja a cada rincón del barrio.
+            </p>
+        </section>
+    );
+}
+
+// Versión final: el pie de página ahora tiene enlaces para navegar sin volver a subir
 function Footer() {
     return (
         <footer className="footer">
-            <p>Pan y Miel · Panadería artesanal · Sprint 4 desarrollado en React</p>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#carrito">Carrito</a>
+                <a href="#nosotros">Quiénes somos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <p>Pan y Miel · Panadería artesanal · Desarrollado en React · Requiere conexión a internet</p>
         </footer>
     );
 }
@@ -308,6 +337,7 @@ function App() {
             <Catalogo onAgregar={agregar} />
             <Carrito items={items} onCambiar={cambiarCantidad} onQuitar={quitar} onVaciar={() => setItems([])} />
             <Pedido items={items} onPedidoEnviado={() => setItems([])} />
+            <Nosotros />
             <Contacto />
             <Footer />
         </React.Fragment>

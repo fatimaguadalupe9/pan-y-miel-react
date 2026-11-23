@@ -5,6 +5,7 @@
     <!-- Sprint 4 (PB-08): sin esta línea el celular muestra la página como si fuera de escritorio -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pan y Miel — Panadería artesanal</title>
+    <meta name="description" content="Pan y Miel, panadería artesanal: consulta el catálogo, arma tu carrito y haz tu pedido.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
@@ -13,6 +14,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Versión final: al ir a una sección, el menú fijo no debe taparla */
+        section {
+            scroll-margin-top: 90px;
         }
 
         body {
@@ -33,6 +43,16 @@
             align-items: center;
             padding: 24px 48px;
             border-bottom: 1px solid #E8DDC8;
+            /* Versión final: el menú se queda fijo arriba al bajar por la página */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #FBF6EE;
+        }
+
+        .logo a {
+            color: inherit;
+            text-decoration: none;
         }
 
         .logo {
@@ -48,8 +68,11 @@
             font-size: 15px;
         }
 
-        .nav a:hover {
-            color: #C98A2C;
+        .nav a:hover,
+        .nav a:focus-visible {
+            color: #8A5A12;
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         /* Sección de inicio */
@@ -104,7 +127,7 @@
 
         .tarjeta-producto p {
             font-size: 14px;
-            color: #7A6A57;
+            color: #5F4F3E;
             margin-bottom: 16px;
         }
 
@@ -121,6 +144,29 @@
             border-radius: 8px;
             margin-bottom: 16px;
             background: #E8DDC8;
+        }
+
+        /* Quiénes somos (versión final) */
+        .nosotros {
+            padding: 0 48px 80px;
+            max-width: 760px;
+        }
+
+        .nosotros h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #6B4226;
+        }
+
+        .nosotros p {
+            color: #5A4636;
+        }
+
+        /* Información del pedido (versión final) */
+        .info-pedido {
+            margin-bottom: 16px;
+            color: #5A4636;
+            font-size: 15px;
         }
 
         /* Contacto */
@@ -199,7 +245,7 @@
         }
 
         .vacio {
-            color: #7A6A57;
+            color: #5F4F3E;
         }
 
         .lista-carrito {
@@ -247,7 +293,7 @@
         .enlace-quitar {
             background: none;
             border: 0;
-            color: #7A6A57;
+            color: #5F4F3E;
             text-decoration: underline;
             cursor: pointer;
             font-size: 14px;
@@ -325,8 +371,22 @@
             padding: 24px 48px;
             border-top: 1px solid #E8DDC8;
             text-align: center;
-            font-size: 13px;
-            color: #7A6A57;
+            font-size: 14px;
+            color: #5F4F3E;
+        }
+
+        .footer nav {
+            margin-bottom: 10px;
+        }
+
+        .footer nav a {
+            margin: 0 12px;
+            color: #6B4226;
+            text-decoration: underline;
+        }
+
+        .footer nav a:hover {
+            color: #8A5A12;
         }
 
         /* Diseño adaptable a celular (Sprint 4, PB-08) */
@@ -356,7 +416,10 @@
                 font-size: 30px;
             }
 
-            .catalogo, .carrito, .pedido, .contacto {
+            section {
+                scroll-margin-top: 130px;
+            }
+            .catalogo, .carrito, .pedido, .contacto, .nosotros {
                 padding: 0 20px 48px;
             }
 
@@ -409,6 +472,7 @@
 
     <!-- Aquí React va a "montar" toda la aplicación -->
     <div id="root"></div>
+    <noscript>Pan y Miel necesita JavaScript y conexión a internet para mostrarse. Actívalo en tu navegador e intenta de nuevo.</noscript>
 
     <!-- React y ReactDOM, cargados directo desde CDN (sin necesidad de instalar Node/npm) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
